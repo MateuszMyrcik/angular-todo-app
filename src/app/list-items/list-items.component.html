@@ -1,0 +1,28 @@
+<ul class="todo-list-items" (click)="removeTask($event)">
+  <li class="todo-list-items__item" *ngFor="let task of tasks">
+    <input
+      class="todo-list-items__checkbox"
+      type="checkbox"
+      (click)="toggleTodoComplete(task)"
+      [checked]="task.completed"
+    />
+    <span
+      class="todo-list-items__task"
+      [ngClass]="{
+      'todo-list-items__task--completed' :
+      task.completed
+      }"
+      >{{ task.text }}</span
+    >
+    <button
+      type="button"
+      class="todo-list-items__button"
+      (click)="onClickRemoveTask(task)"
+    >
+      X
+    </button>
+  </li>
+  <li class="todo-list-items__no-data" *ngIf=" tasks.length === 0">
+    Nie masz obecnie zadnych zadan :)
+  </li>
+</ul>

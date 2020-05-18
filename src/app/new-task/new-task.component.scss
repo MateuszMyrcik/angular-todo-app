@@ -1,0 +1,66 @@
+@import '../../assets/colors.scss';
+
+.todo-new-task {
+  color: $color-white;
+  padding: 15px;
+  font-size: 16px;
+  
+  &__add-btn:hover {
+    color: $color-goldenrod;
+    border-color: $color-goldenrod;
+    transition: 500ms border-color, 500ms color;
+  }
+  
+  &__task-input {
+    width: calc(100% - 20px);
+    background-color: $color-grey;
+    border: 1px solid $color-white;
+    border-radius: 10px;
+    color: $color-white;
+    padding: 5px 10px;
+  }
+  
+  &__task-input::placeholder {
+    color: $color-white;
+  }
+  
+  &__btn-container {
+    margin: 10px auto;
+    width: 100px;
+  }
+  
+  &__button {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 10px 10px;
+    border-radius: 12px;
+
+    &--accept {
+      background-color: $color-grey;
+      border: 1px solid $color-greenyellow;
+      color: $color-greenyellow;
+    }
+
+    &--decline {
+      background-color: $color-grey;
+      border: 1px solid $color-red;
+      color: $color-red;
+    }
+
+    &--add {
+      border: 1px solid $color-white;
+      padding: 5px;
+      width: 150px;
+      border-radius: 75px;
+      margin: 10px auto;
+      text-align: center;
+    }
+  }
+
+  &__error-msg {
+    color: $color-red;
+    font-size: 12px;
+    text-align: center;
+  }
+}

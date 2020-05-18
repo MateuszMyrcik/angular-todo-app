@@ -1,0 +1,39 @@
+@import '../../assets/colors.scss';
+
+.todo-list-items {
+  margin: 10px 15px;
+  padding: 0;
+  overflow-y: scroll;
+  height: 400px;
+
+  &__item {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: $color-white;
+    list-style: none;
+    width: calc(100% - 10px);
+    display: flex;
+  }
+
+  &__no-data {
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-white;
+    border: 1px solid $color-white-smoke;
+    padding: 10px 0;
+  }
+
+  &__button {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &__task {
+    &--completed {
+      color: $color-green;
+      text-decoration: line-through;
+    }
+  }
+}

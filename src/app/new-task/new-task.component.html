@@ -1,0 +1,34 @@
+<section class="todo-new-task">
+  <div
+    class="todo-new-task__button--add"
+    *ngIf="!isAddTaskArea"
+    (click)="showAddTaskArea()"
+  >
+    Dodaj zadanie
+  </div>
+  <div class="todo-new-task__input-area" *ngIf="isAddTaskArea">
+    <input
+      class="todo-new-task__task-input"
+      type="text"
+      placeholder="Wpisz tu zadanie..."
+      [(ngModel)]="taskText"
+    />
+    <div class="todo-new-task__btn-container">
+      <button
+        class="todo-new-task__button todo-new-task__button--accept"
+        (click)="addTask(task)"
+      >
+        V
+      </button>
+      <button
+        class="todo-new-task__button todo-new-task__button--decline"
+        (click)="showAddTaskArea()"
+      >
+        X
+      </button>
+    </div>
+    <div class="todo-new-task__error-msg" *ngIf="isValidateError">
+      Blad! Twoje zadanie nie moze byc puste.
+    </div>
+  </div>
+</section>
